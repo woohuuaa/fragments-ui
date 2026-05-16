@@ -1,0 +1,37 @@
+{
+  "name": "fragments-ui",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Fragments UI testing web app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woohuuaa/fragments-ui.git"
+  },
+  "author": "Wan Hua Wu",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.15.4",
+    "aws-amplify": "^6.17.0",
+    "dotenv": "^17.4.2",
+    "oidc-client-ts": "^3.5.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.8.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13"
+  }
+}
