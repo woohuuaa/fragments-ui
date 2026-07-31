@@ -41,14 +41,20 @@ export async function signIn(): Promise<void> {
 
 export async function signOut(): Promise<void> {
   const region = poolId.split('_')[0];
-  const cognitoDomain = 'https://' + poolId.replace('_', '') + '.auth.' + region + '.amazoncognito.com';
+  const cognitoDomain =
+    'https://' + poolId.replace('_', '') + '.auth.' + region + '.amazoncognito.com';
 
   // Clear the stored user session before redirecting
   await userManager.removeUser();
 
   // Directly redirect to Cognito's logout endpoint instead of using
   // signoutRedirect(), which may fail to find the end_session_endpoint
-  window.location.href = cognitoDomain + '/logout?client_id=' + clientId + '&logout_uri=' + encodeURIComponent(redirectUri);
+  window.location.href =
+    cognitoDomain +
+    '/logout?client_id=' +
+    clientId +
+    '&logout_uri=' +
+    encodeURIComponent(redirectUri);
 }
 
 // Create a simplified view of the user, with an extra method for creating

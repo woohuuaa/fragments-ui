@@ -29,19 +29,22 @@ function Viewer() {
       });
   }, []);
 
-  useEffect(function () {
-    if (!user || !fragment) {
-      return;
-    }
+  useEffect(
+    function () {
+      if (!user || !fragment) {
+        return;
+      }
 
-    getFragmentContent(user, fragment)
-      .then(function (data) {
-        setContent(data);
-      })
-      .catch(function (err) {
-        setError(err instanceof Error ? err.message : 'Unable to load fragment');
-      });
-  }, [user, fragment]);
+      getFragmentContent(user, fragment)
+        .then(function (data) {
+          setContent(data);
+        })
+        .catch(function (err) {
+          setError(err instanceof Error ? err.message : 'Unable to load fragment');
+        });
+    },
+    [user, fragment]
+  );
 
   if (loading) {
     return <pre>Loading...</pre>;
